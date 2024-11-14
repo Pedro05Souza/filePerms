@@ -11,10 +11,10 @@ struct File createFile(char* description, unsigned int* permissions){
 
 void alterFilePermission(struct File* file, unsigned int* permission){
     if(file->permissionsRequired != 18){
-        unsigned int* newPermission = file->permissionsRequired | *permission;
-        printf("%d\n", &newPermission);
-        newPermission = *newPermission ^ *permission;
-        printf("%d\n", &newPermission);
+        unsigned int newPermission = file->permissionsRequired | *permission;
+        printf("%d\n", newPermission);
+        newPermission = newPermission ^ *permission;
+        printf("%d\n", newPermission);
     }else{
         file->permissionsRequired = 18;
     }
